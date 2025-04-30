@@ -1,0 +1,9 @@
+[project]
+name = "bloodhound-fix-computers"
+version = "0.0.1"
+description = "Quickfix script to allow BloodHound legacy to import latest SharpHound data."
+readme = "README.md"
+requires-python = ">=3.7"
+
+[project.scripts]
+bloodhound-fix-computers = "bloodhound-fix-computers.__main__:main"
