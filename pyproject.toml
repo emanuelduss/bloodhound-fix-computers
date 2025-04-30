@@ -6,4 +6,4 @@ readme = "README.md"
 requires-python = ">=3.7"
 
 [project.scripts]
-fix = "fix:main"
+bloodhound-fix-computers = "fix:main"
