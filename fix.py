@@ -32,6 +32,7 @@ def update_zip_file(zipname, filename, data):
 
 
 def bloodhound_computer_fix(inputfile):
+  print(f"Fixing {inputfile}...", end=' ')
   # open BloodHound archive and search for the file to fix
   archive = zipfile.ZipFile(inputfile, 'r')
   selected_file = None
@@ -89,14 +90,15 @@ def bloodhound_computer_fix(inputfile):
 
   # write modified file into archive
   update_zip_file(inputfile, selected_file, json_object)
+  print("Done.")
 
 def main():
-    if len(sys.argv) != 2:
-        print("Usage: bloodhound-fix-computer 20230523133742_BloodHound.zip\nWarning: the input file will be overwritten!")
+    if len(sys.argv) <= 2:
+        print("Usage: bloodhound-fix-computer 20230523133742_BloodHound.zip ...")
+        print("Warning: the input file will be overwritten!")
     else:
-        # Echo the provided arguments
-        inputfile = sys.argv[1]
-        bloodhound_computer_fix(inputfile)
+        for zipfile in sys.argv[1:]:
+            bloodhound_computer_fix(zipfile)
 
 if __name__ == "__main__":
     main()
