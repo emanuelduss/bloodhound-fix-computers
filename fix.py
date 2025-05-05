@@ -93,7 +93,7 @@ def bloodhound_computer_fix(inputfile):
   print("Done.")
 
 def main():
-    if len(sys.argv) <= 2:
+    if len(sys.argv) < 2:
         print("Usage: bloodhound-fix-computer 20230523133742_BloodHound.zip ...")
         print("Warning: the input file will be overwritten!")
     else:
